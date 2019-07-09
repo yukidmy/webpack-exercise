@@ -12,7 +12,9 @@ module.exports = {
     // production: enables optimization and compression / development: enables sourcemap
     // https://webpack.js.org/configuration/mode/
     mode: "development",
-    devtool: 'source-map',
+
+    // https://webpack.js.org/configuration/devtool/
+    devtool: 'source-map',  // suits for both development and production
 
     // Options for webtools-dev-server
     // https://webpack.js.org/configuration/dev-server/

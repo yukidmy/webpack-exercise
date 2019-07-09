@@ -94,7 +94,13 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sub__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sub */ \"./src/sub.js\");\n\n\nconsole.log(\"index.js is loaded\");\n\nObject(_sub__WEBPACK_IMPORTED_MODULE_0__[\"hello\"])();\n\n//# sourceURL=webpack:///./src/index.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sub__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sub */ "./src/sub.js");
+
+
+console.log("Hello from index.js ;)");
+
+Object(_sub__WEBPACK_IMPORTED_MODULE_0__["hello"])();
 
 /***/ }),
 
@@ -106,8 +112,14 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sub
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"hello\", function() { return hello; });\nfunction hello() {\n    alert(\"sub.js is loaded\");\n}\n\n//# sourceURL=webpack:///./src/sub.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hello", function() { return hello; });
+function hello() {
+    console.log("Hello from sub.js :D")
+    alert("HELLO!!");
+}
 
 /***/ })
 
 /******/ });
+//# sourceMappingURL=main.js.map
