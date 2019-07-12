@@ -1,7 +1,7 @@
 import {hello} from "./sub";
 import _ from 'lodash';
-import './style.css';
-import Icon from './denshiba.png';
+import '../css/style.css';
+import Icon from '../img/denshiba.png';
 
 function component() {
     const element = document.createElement('div');
