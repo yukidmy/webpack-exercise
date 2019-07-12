@@ -1,6 +1,9 @@
-// Ref.: https://ics.media/entry/12140/
+// https://ics.media/entry/12140/
+// https://webpack.js.org/guides/
 
 // var path = require('path');
+
+const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
     entry: `./src/index.js`,
@@ -11,14 +14,27 @@ module.exports = {
 
     // production: enables optimization and compression / development: enables sourcemap
     // https://webpack.js.org/configuration/mode/
-    mode: "development",
+    mode: isDev ? "development" : "production",
 
     // https://webpack.js.org/configuration/devtool/
-    devtool: 'source-map',  // suits for both development and production
+    devtool: isDev ? 'eval': 'source-map',  // suits for both development and production
 
     // https://webpack.js.org/configuration/module/
     module: {
         rules: [
+            {
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options: {
+                            presets: [
+                                "@babel/preset-env"
+                            ]
+                        }
+                    }
+                ]
+            },
              {
                  test: /\.css$/,
                  use: [
@@ -39,6 +55,5 @@ module.exports = {
         compress: true,
         open: true,  // Open the browser after server had been started
         port: 8080,
-
     },
-  };
+};
