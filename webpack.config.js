@@ -16,6 +16,19 @@ module.exports = {
     // https://webpack.js.org/configuration/devtool/
     devtool: 'source-map',  // suits for both development and production
 
+    // https://webpack.js.org/configuration/module/
+    module: {
+        rules: [
+             {
+                 test: /\.css$/,
+                 use: [
+                     'style-loader',
+                     'css-loader'
+                 ]
+             }
+        ]
+    },
+
     // Options for webtools-dev-server
     // https://webpack.js.org/configuration/dev-server/
     devServer: {
