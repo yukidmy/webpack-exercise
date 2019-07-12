@@ -2,11 +2,12 @@
 // https://webpack.js.org/guides/
 
 // var path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
-    entry: `./src/index.js`,
+    entry: `./src/js/index.js`,
     output: {
         path: `${__dirname}/dist`,
         filename: "main.js"
@@ -24,6 +25,7 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
+                exclude:/node_modules/,
                 use: [
                     {
                         loader: "babel-loader",
@@ -33,6 +35,12 @@ module.exports = {
                             ]
                         }
                     }
+                ]
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    "html-loader"
                 ]
             },
             {
@@ -50,6 +58,12 @@ module.exports = {
             }
         ]
     },
+
+    plugins: [
+        new HtmlWebpackPlugin({
+          template: "./src/html/index.html"
+        })
+    ],
 
     // Options for webtools-dev-server
     // https://webpack.js.org/configuration/dev-server/
